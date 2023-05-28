@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo "Hello $env"
+                echo "deploy environment: $env"
             }
         }
         stage('Deploy') {
