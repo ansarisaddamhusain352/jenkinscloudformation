@@ -1,10 +1,10 @@
 pipeline {
     agent any
 	parameters {
-		string defaultValue: 'Jenkinsfile', description: '', name: 'JenkinsFileParameter'
-		boolean value: false, description: '', name: 'override_existing_code'
-		choice choices: ['dev','qa','prod'], description: '', name: 'deploy'
-	}
+    string(defaultValue: "TEST", description: 'What environment?', name: 'userFlag')
+    choice(choices: ['dev', 'qa', 'prod'], description: 'Select field for target environment', name: 'deploy')
+	boolean(value: false, description: 'override existing code?', name: 'override_existing_code')
+    }
     stages {
         stage('Build') {
             steps {
