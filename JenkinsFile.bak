@@ -2,7 +2,8 @@ pipeline {
     agent any
 	parameters {
     string(defaultValue: "TEST", description: 'What environment?', name: 'userFlag')
-    choice(choices: ['TESTING', 'STAGING', 'PRODUCTION'], description: 'Select field for target environment', name: 'DEPLOY_ENV')
+    choice(choices: ['dev', 'qa', 'prod'], description: 'Select field for target environment', name: 'deploy')
+	boolean(value: false, description: 'override existing code?', name: 'override_existing_code')
     }
     stages {
         stage('Build') {

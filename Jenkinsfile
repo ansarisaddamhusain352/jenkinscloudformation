@@ -3,7 +3,7 @@ pipeline {
 	parameters {
     string(defaultValue: "TEST", description: 'What environment?', name: 'userFlag')
     choice(choices: ['dev', 'qa', 'prod'], description: 'Select field for target environment', name: 'deploy')
-	boolean(value: false, description: 'override existing code?', name: 'override_existing_code')
+	booleanParam(defaultValue: false, description: 'override existing code?', name: 'override_existing_code')
     }
     stages {
         stage('Build') {
