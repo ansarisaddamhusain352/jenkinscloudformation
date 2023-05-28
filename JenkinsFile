@@ -1,5 +1,8 @@
 pipeline {
     agent any
+	environment { 
+            env = choice('deploy') 
+        }
     stages {
         stage('Build') {
             steps {
@@ -9,7 +12,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo "Hello"
+                echo "deploy environment: $env"
             }
         }
         stage('Deploy') {
