@@ -5,7 +5,7 @@
         "myS3Bucket": {
             "Type": "AWS::S3::Bucket",
             "Properties": {
-                "BucketName" : "demo-cloudformation"
+                "BucketName" : "cloudformation-bkt0293"
             }
         }
     }
