@@ -7,5 +7,10 @@ pipeline {
 				sh "aws cloudformation create-stack --stack-name myteststack --template-body file://config.json --region 'us-east-1'"
 			}
 		}
+		stage('Test') {
+			steps {
+				sh "ls"
+			}
+		}
 	}
 }
