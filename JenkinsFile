@@ -1,5 +1,9 @@
 pipeline {
     agent any
+	parameters {
+		boolean defaultValue: False, description: '', name: 'override_existing_code'
+		choice choices: ['dev','qa','prod'], description: '', name: 'deploy'
+	}
     stages {
         stage('Build') {
             steps {
