@@ -2,7 +2,7 @@ pipeline {
     agent any
 	parameters {
 		string defaultValue: 'Jenkinsfile', description: '', name: 'JenkinsFileParameter'
-		boolean defaultValue: False, description: '', name: 'override_existing_code'
+		boolean value: False, description: '', name: 'override_existing_code'
 		choice choices: ['dev','qa','prod'], description: '', name: 'deploy'
 	}
     stages {
