@@ -6,6 +6,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+				echo "deploy environment: $env"
                 sh "export AWS_DEFAULT_REGION=us-east-1"
 				sh "aws cloudformation create-stack --stack-name myteststack --template-body file://config.json --region 'us-east-1'"
             }
